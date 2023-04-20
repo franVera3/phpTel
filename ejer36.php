@@ -7,7 +7,8 @@
     <title>Sitio web</title>
 </head>
 <body>
-    <?php include 'ejer36_1.php';?><!--trae la info de otro archivo-->
+    <?php include_once 'ejer36_1.php';?><!--trae la info de otro archivo-->
+    <?php include_once 'ejer36_1.php';?>
     <?php echo "Hola estoy en la pagina principal";?>
     
 </body>

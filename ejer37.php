@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <?php require("ejer37_1_.php"); ?><!--Diferencia entre require e include-->
+    <?php require_once("ejer37_1.php"); ?><!--Diferencia entre require e include-->
+    <?php require_once("ejer37_1.php"); ?>
     <?php echo "Estoy usando require en la pagina";?>
 </body>
 </html>
