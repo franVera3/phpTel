@@ -3,11 +3,23 @@
 <?php
 
 if ($_POST) {
-    $nombre=$_POST['nombre'];
+    $nombre = $_POST['nombre'];
     $objConexion = new conexion();
     $sql = "INSERT INTO `proyectos` (`id`, `nombre`, `imagen`, `descripcion`) VALUES ('null','$nombre','imagen.jpg','Es un proyecto de hace poquito');";
     $objConexion->ejecutar($sql);
 }
+
+if ($_GET) {
+    $id=$_GET['borrar'];
+    $objConexion=new conexion();
+    $sql="DELETE FROM `proyectos` WHERE `proyectos`.`id` =".$id;
+    $objConexion->ejecutar($sql);
+}
+
+$objConexion = new conexion();
+$proyectos = $objConexion->consultar("SELECT * FROM `proyectos`");
+
+
 ?>
 <br>
 <br>
@@ -41,14 +53,20 @@ if ($_POST) {
                             <th scope="col">ID</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Imagen</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="">
-                            <td scope="row">3</td>
-                            <td>Aplicacion Web</td>
-                            <td>imagen.jpg</td>
-                        </tr>
+                        <?php foreach ($proyectos as $proyecto) { ?>
+                            <tr class="">
+                                <td scope="row"><?php echo ($proyecto['id']); ?></td>
+                                <td><?php echo ($proyecto['nombre']); ?></td>
+                                <td><?php echo ($proyecto['imagen']); ?></td>
+                                <td><?php echo ($proyecto['descripcion']); ?></td>
+                                <td><a class="btn btn-danger" href="?borrar=<?php echo $proyecto['id']; ?>">Eliminar</a></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>

@@ -16,9 +16,16 @@ class conexion
         }
     }
 
-    public function ejecutar($sql){
+    public function ejecutar($sql){//insertar/delete/actualizar
         $this->conexion->exec($sql);
         return $this->conexion->lastInsertId();
     }
+
+    public function consultar($sql){
+        $sentencia=$this->conexion->prepare($sql);
+        $sentencia->execute();
+        return $sentencia->fetchAll();//retorna todos los registros con la sentenica sql
+    }
+
 }
 ?>
