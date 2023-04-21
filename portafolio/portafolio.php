@@ -1,11 +1,14 @@
+<?php include('cabecera.php'); ?>
+<?php include("conexion.php"); ?>
 <?php
-include('cabecera.php')
-?>
-<?php include("conexion.php")?>
-<?php
-$objConexion=new conexion();
-$sql="INSERT INTO `proyectos`(`id`, `nombre`, `imagen`, `descripcion`) VALUES ('NULL','Proyecto 1','imagen.jpg','Es un proyecto de hace poquito');";
+
+$objConexion = new conexion();
+
+$sql = "INSERT INTO `proyectos` (`id`, `nombre`, `imagen`, `descripcion`) VALUES ('null','Proyecto 1','imagen.jpg','Es un proyecto de hace poquito');";
+
+
 $objConexion->ejecutar($sql);
+
 ?>
 <br>
 <br>
@@ -22,7 +25,7 @@ $objConexion->ejecutar($sql);
                     <form action="portafolio.php" method="post">
                         Nombre del proyecto: <input class="form-control" type="text" name="nombre" id="">
                         <br>
-                        Imagen del proyecto: <input class="form-control" type="text" name="archivo" id="">
+                        Imagen del proyecto: <input class="form-control" type="file" name="archivo" id="">
                         <br>
 
                         <input class="btn btn-success" type="submit" value="Enviar Proyecto">
