@@ -4,8 +4,11 @@
 
 if ($_POST) {
     $nombre = $_POST['nombre'];
+    $descripcion=$_POST['descripcion'];
+    $imagen=$_FILES['archivo']['name'];
+    
     $objConexion = new conexion();
-    $sql = "INSERT INTO `proyectos` (`id`, `nombre`, `imagen`, `descripcion`) VALUES ('null','$nombre','imagen.jpg','Es un proyecto de hace poquito');";
+    $sql = "INSERT INTO `proyectos` (`id`, `nombre`, `imagen`, `descripcion`) VALUES ('null','$nombre','$imagen','$descripcion');";
     $objConexion->ejecutar($sql);
 }
 
@@ -38,7 +41,8 @@ $proyectos = $objConexion->consultar("SELECT * FROM `proyectos`");
                         <br>
                         Imagen del proyecto: <input class="form-control" type="file" name="archivo" id="">
                         <br>
-
+                        Agregar descripcion: <textarea name="descripcion" class="form-control" rows="3" placeholder="Ingresa detalle..."></textarea>
+                        <br>
                         <input class="btn btn-success" type="submit" value="Enviar Proyecto">
                     </form>
                 </div>
