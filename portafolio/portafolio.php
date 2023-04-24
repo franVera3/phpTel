@@ -17,6 +17,8 @@ if ($_POST) {
     $objConexion = new conexion();
     $sql = "INSERT INTO `proyectos` (`id`, `nombre`, `imagen`, `descripcion`) VALUES ('null','$nombre','$imagen','$descripcion');";
     $objConexion->ejecutar($sql);
+    header("location:portafolio.php");
+
 }
 
 if ($_GET) {
@@ -24,10 +26,11 @@ if ($_GET) {
     $objConexion=new conexion();
 
     $imagen=$objConexion->consultar("SELECT * FROM `proyectos` where id=".$id);
-    unlink("iamgenes/".$imagen[0]['imagen']);
+    unlink("imagenes/".$imagen[0]['imagen']);
 
     $sql="DELETE FROM `proyectos` WHERE `proyectos`.`id` =".$id;
     $objConexion->ejecutar($sql);
+    header("location:portafolio.php");
 }
 
 $objConexion = new conexion();
@@ -48,11 +51,11 @@ $proyectos = $objConexion->consultar("SELECT * FROM `proyectos`");
                 </div>
                 <div class="card-body">
                     <form action="portafolio.php" method="post" enctype="multipart/form-data">
-                        Nombre del proyecto: <input class="form-control" type="text" name="nombre" id="">
+                        Nombre del proyecto: <input class="form-control" type="text" name="nombre" id="" required>
                         <br>
-                        Imagen del proyecto: <input class="form-control" type="file" name="archivo" id="">
+                        Imagen del proyecto: <input class="form-control" type="file" name="archivo" id="" required>
                         <br>
-                        Agregar descripcion: <textarea name="descripcion" class="form-control" rows="3" placeholder="Ingresa detalle..."></textarea>
+                        Agregar descripcion: <textarea name="descripcion" class="form-control" rows="3" required placeholder="Ingresa detalle..."></textarea>
                         <br>
                         <input class="btn btn-success" type="submit" value="Enviar Proyecto">
                     </form>
@@ -77,7 +80,9 @@ $proyectos = $objConexion->consultar("SELECT * FROM `proyectos`");
                             <tr class="">
                                 <td scope="row"><?php echo ($proyecto['id']); ?></td>
                                 <td><?php echo ($proyecto['nombre']); ?></td>
-                                <td><?php echo ($proyecto['imagen']); ?></td>
+                                <td>
+                                <img width="100" src="imagenes/<?php echo $proyecto['imagen']?>" alt="" srcset="">
+                                </td>
                                 <td><?php echo ($proyecto['descripcion']); ?></td>
                                 <td><a class="btn btn-danger" href="?borrar=<?php echo $proyecto['id']; ?>">Eliminar</a></td>
                             </tr>
