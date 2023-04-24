@@ -22,6 +22,10 @@ if ($_POST) {
 if ($_GET) {
     $id=$_GET['borrar'];
     $objConexion=new conexion();
+
+    $imagen=$objConexion->consultar("SELECT * FROM `proyectos` where id=".$id);
+    unlink("iamgenes/".$imagen[0]['imagen']);
+
     $sql="DELETE FROM `proyectos` WHERE `proyectos`.`id` =".$id;
     $objConexion->ejecutar($sql);
 }
