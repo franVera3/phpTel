@@ -13,7 +13,7 @@
 
 <body>
 
-    <?php $url="http://".$_SERVER['HTTP_HOST']."/sitio_web"; ?>
+    <?php $url="http://".$_SERVER['HTTP_HOST']."/ejercicios/sitio_web"; ?>
 
     <nav class="navbar navbar-expand navbar-light bg-light">
         <div class="nav navbar-nav">
@@ -21,7 +21,7 @@
             <a class="nav-item nav-link" href="<?php echo $url;?>/admin/inicio.php">inicio</a>
             <a class="nav-item nav-link" href="<?php echo $url;?>/admin/seccion/productos.php">Administrador de cosas</a>
             <a class="nav-item nav-link" href="<?php echo $url;?>/admin/seccion/cerrar.php">Cerrar Sesion</a>
-            <a class="nav-item nav-link" href="<?php echo $url;?>/index.php">Ver sitio web</a>
+            <a class="nav-item nav-link" href="<?php echo $url;?>">Ver sitio web</a>
         </div>
     </nav>
 
