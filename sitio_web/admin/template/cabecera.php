@@ -13,7 +13,7 @@
 
 <body>
 
-    <?php $url="http://".$_SERVER['HTTP_HOST']."PHPTEL/sitio_web"?>
+    
 
     <nav class="navbar navbar-expand navbar-light bg-light">
         <div class="nav navbar-nav">
@@ -21,7 +21,7 @@
             <a class="nav-item nav-link" href="#">inicio</a>
             <a class="nav-item nav-link" href="">Administrador de cosas</a>
             <a class="nav-item nav-link" href="">Cerrar Sesion</a>
-            <a class="nav-item nav-link" href="<?php echo $url;?>">Ver sitio web</a>
+            <a class="nav-item nav-link" href="../index.php">Ver sitio web</a>
         </div>
     </nav>
 
