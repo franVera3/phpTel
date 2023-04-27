@@ -27,6 +27,7 @@ switch ($accion) {
 
         $sentenciaSQL->bindParam(':imagen', $nombreArchivo);
         $sentenciaSQL->execute();
+        header("Location:productos.php");
         break;
 
     case "Modificar":
@@ -58,10 +59,11 @@ switch ($accion) {
             $sentenciaSQL->bindParam(':id', $txtID);
             $sentenciaSQL->execute();
         }
+        header("Location:productos.php");
         break;
 
     case "Cancelar":
-        echo "canceladoooo";
+        header("Location:productos.php");
         break;
 
     case "Seleccionar":
@@ -71,8 +73,9 @@ switch ($accion) {
         $libro = $sentenciaSQL->fetch(PDO::FETCH_LAZY);
         $txtNombre = $libro['nombre'];
         $txtImagen = $libro['imagen'];
-        echo "seleccionado";
+        //echo "seleccionado";
         break;
+        
     case "Borrar":
 
         $sentenciaSQL = $conexion->prepare("SELECT imagen FROM libros WHERE id=:id");
@@ -81,7 +84,6 @@ switch ($accion) {
         $libro = $sentenciaSQL->fetch(PDO::FETCH_LAZY);
 
         if (isset($libro["imagen"]) && ($libro["imagen"] != "imagen.jpg")) {
-
             if (file_exists("../../img/" . $libro["imagen"])) {
                 unlink("../../img/" . $libro["imagen"]);
             }
@@ -90,6 +92,7 @@ switch ($accion) {
         $sentenciaSQL = $conexion->prepare("DELETE FROM libros WHERE id=:id");
         $sentenciaSQL->bindParam(':id', $txtID);
         $sentenciaSQL->execute();
+        header("Location:productos.php");
         break;
 }
 
@@ -130,7 +133,7 @@ $listaLibros = $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
                     <br>
 
-                    <input type="file" required class="form-control" value="" name="txtImagen" id="txtImagen">
+                    <input type="file" class="form-control" value="" name="txtImagen" id="txtImagen">
                 </div>
                 <br>
 

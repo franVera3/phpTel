@@ -1,15 +1,23 @@
 <?php
+/*session_start();
 
 if($_POST){
-    header('Location:inicio.php');
-}
+    if(($_POST['usuario']=="develoteca") && ($_POST['contraseña']=="sistema")){//
+        $_SESSION['usuario']=="ok";
+        $_SESSION['nombreUsuario']=="Develoteca";
+        header('Location:inicio.php');
+    }else{
+        $mensaje="Error: El usuario y contraseña son incorrectos";
+    }
+    header("location:inicio.php");
+}*/
 
 ?>
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Administrador</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -37,11 +45,17 @@ if($_POST){
                     </div>
                     <div class="card-body">
 
+                        <!--<?php //if(isset($mensaje)){?>
+                        <div class="alert alert-danger" role="alert">
+                           <?php //echo $mensaje;?>
+                        </div>
+                        <?php //}?>-->
+
                         <form method="post">
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Usuario</label>
-                                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="mail@mail.com" name="usuario">
+                                <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Escribe tu usuario" name="usuario">
                             </div>
 
                             <div class="form-group">
@@ -49,7 +63,7 @@ if($_POST){
                                 <input type="password" class="form-control" placeholder="Password" name="contraseña">
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Ingresar</button>
+                            <button type="submit" class="btn btn-primary">Ingresar al administrador</button>
                         </form>
 
 
