@@ -27,9 +27,6 @@ if($_POST){
 </head>
 
 <body>
-
-    Login
-
     <div class="container">
         <div class="row">
 
