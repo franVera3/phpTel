@@ -1,3 +1,6 @@
+<?php 
+$url_base="http://localhost/ejercicios/aplicacion%20escuela/admin/";
+?>
 <!doctype html>
 <html lang="en">
 
@@ -16,8 +19,8 @@
     <header>
         <nav class="navbar navbar-expand navbar-light bg-light">
             <div class="nav navbar-nav">
-                <a class="nav-item nav-link active" href="#" aria-current="page">Home
-                    <a class="nav-item nav-link" href="#">Servicios</a>
+                <a class="nav-item nav-link active" href="#" aria-current="page">Administracion
+                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones/service">Servicios</a>
                     <a class="nav-item nav-link" href="#">Portafolio</a>
                     <a class="nav-item nav-link" href="#">Entradas</a>
                     <a class="nav-item nav-link" href="#">Equipo</a>
