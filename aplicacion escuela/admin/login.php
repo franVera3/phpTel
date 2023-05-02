@@ -23,7 +23,43 @@ include "bd.php";
     <!-- place navbar here -->
   </header>
   <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            
+          </div>
+          <div class="col-4">
+            <div class="card">
+              <div class="card-header">
+                Login
+              </div>
+              <div class="card-body">
+                
+              
+                <form action="" method="post">
+                  <div class="mb-3">
+                    <label for="usuario" class="form-label">Usuario</label>
+                    <input type="text"
+                      class="form-control" name="usuario" id="usuario" aria-describedby="helpId" placeholder="">
+                  </div>
+                  <div class="mb-3">
+                    <label for="contraseña" class="form-label">Contraseña</label>
+                    <input type="password"
+                      class="form-control" name="contraseña" id="contraseña" aria-describedby="helpId" placeholder="">
+                  </div>
+                  <a name="" id="" class="btn btn-primary" href="index.php" role="button">Entrar</a>
+                </form>
 
+
+              </div>
+              <div class="card-footer text-muted">
+                Footer
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
   </main>
   <footer>
     <!-- place footer here -->

@@ -5,7 +5,7 @@ $url_base="http://localhost/ejercicios/aplicacion%20escuela/admin/";
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Administrador del sitio web</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,12 +20,13 @@ $url_base="http://localhost/ejercicios/aplicacion%20escuela/admin/";
         <nav class="navbar navbar-expand navbar-light bg-light">
             <div class="nav navbar-nav">
                 <a class="nav-item nav-link active" href="#" aria-current="page">Administracion
-                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones/service">Servicios</a>
-                    <a class="nav-item nav-link" href="#">Portafolio</a>
-                    <a class="nav-item nav-link" href="#">Entradas</a>
-                    <a class="nav-item nav-link" href="#">Equipo</a>
-                    <a class="nav-item nav-link" href="#">Configuraciones</a>
-                    <a class="nav-item nav-link" href="#">Usuarios</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones//service">Servicios</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones//portafolio">Portafolio</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones//entry">Entradas</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones//team">Equipo</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones//config">Configuraciones</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones//users">Usuarios</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base?>/login.php"">Cerrar sesion</a>
             </div>
         </nav>
     </header>
