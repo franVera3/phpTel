@@ -20,14 +20,15 @@ $url_base="http://localhost/ejercicios/aplicacion%20escuela/admin/";
         <nav class="navbar navbar-expand navbar-light bg-light">
             <div class="nav navbar-nav">
                 <a class="nav-item nav-link active" href="#" aria-current="page">Administracion
-                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones//service">Servicios</a>
-                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones//portafolio">Portafolio</a>
-                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones//entry">Entradas</a>
-                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones//team">Equipo</a>
-                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones//config">Configuraciones</a>
-                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones//users">Usuarios</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones/service">Servicios</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones/portafolio">Portafolio</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones/entry">Entradas</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones/team">Equipo</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones/config">Configuraciones</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base?>secciones/users">Usuarios</a>
                     <a class="nav-item nav-link" href="<?php echo $url_base?>/login.php"">Cerrar sesion</a>
             </div>
         </nav>
     </header>
     <main class="container">
+        <br>
