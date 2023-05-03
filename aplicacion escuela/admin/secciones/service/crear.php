@@ -28,7 +28,7 @@ if($_POST){
         <div class="mb-3">
           <label for="icono" class="form-label">Icono:</label>
           <input type="text"
-            class="form-control" name="" id="" aria-describedby="helpId" placeholder="Icono">
+            class="form-control" name="icono" id="icono" aria-describedby="helpId" placeholder="Icono">
           
         </div>
         <div class="mb-3">
