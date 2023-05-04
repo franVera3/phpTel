@@ -1,3 +1,14 @@
+<?php
+
+include "admin/bd.php";
+
+$sentencia=$conexion->prepare("SELECT * FROM `tbl_servicios`");
+$sentencia->execute();
+$lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -52,30 +63,20 @@
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
                 <div class="row text-center">
+
+                <?php foreach($lista_servicios as $recursos){?>
+                    <!--PARA LOS ICONOS USAR LOS QUE VIENE CON LA LIBRERIA, o fijarse en fontawesome-->
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">E-Commerce</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <h4 class="my-3"><?php echo $recursos['titulo']?></h4>
+                        <p class="text-muted"><?php echo $recursos['descripcion']?></p>
                     </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Responsive Design</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Web Security</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
+                    
+                <?php } ?>
+
                 </div>
             </div>
         </section>

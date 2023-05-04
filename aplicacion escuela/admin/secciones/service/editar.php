@@ -32,7 +32,7 @@ if ($_POST) {
     $sentencia->bindParam(":descripcion", $descripcion);
     $sentencia->bindParam(":id", $txtID);
     $sentencia->execute();
-    $mensaje = "Registro modificadeo con exito";
+    $mensaje = "Registro agregado con exito";
     header("Location:index.php?mensaje=" . $mensaje);
 }
 
