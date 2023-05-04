@@ -5,7 +5,24 @@ include("../../bd.php");
 include("../../templates/header.php");
 
 if($_POST){
+    $titulo=(isset($_POST['titulo']))?$_POST['titulo']:"";
+    $subtitulo=(isset($_POST['subtitulo']))?$_POST['subtitulo']:"";
+    $imagen=(isset($_FILES['imagen']['name']))?$_FILES['imagen']['name']:"";
+    $descripcion=(isset($_POST['descripcion']))?$_POST['descripcion']:"";
+    $cliente=(isset($_POST['cliente']))?$_POST['cliente']:"";
+    $categoria=(isset($_POST['categoria']))?$_POST['categoria']:"";
+    $url=(isset($_POST['url']))?$_POST['url']:"";
     
+    $sentencia=$conexion->prepare("INSERT INTO `tbl_portafolio`(`id`, `titulo`, `subtitulo`, `imagen`, `descripcion`, `cliente`, `categoria`, `url`) VALUES (NULL,:titulo,:subtitulo,:imagen,:descripcion,:cliente,:categoria,:url);");
+
+    $sentencia->bindParam(":titulo",$titulo);
+    $sentencia->bindParam(":subtitulo",$subtitulo);
+    $sentencia->bindParam(":imagen",$imagen);
+    $sentencia->bindParam(":descripcion",$descripcion);
+    $sentencia->bindParam(":cliente",$cliente);
+    $sentencia->bindParam(":categoria",$categoria);
+    $sentencia->bindParam(":url",$url);
+    $sentencia->execute();
 }
 
 
