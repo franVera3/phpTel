@@ -13,6 +13,11 @@ if($_POST){
     $categoria=(isset($_POST['categoria']))?$_POST['categoria']:"";
     $url=(isset($_POST['url']))?$_POST['url']:"";
     
+
+    $fecha_imagen=new DateTime();
+    $nombre_archivo_imagen=($imagen!="")?$fecha_imagen->getTimestamp()."_".$imagen:"";
+    
+
     $sentencia=$conexion->prepare("INSERT INTO `tbl_portafolio`(`id`, `titulo`, `subtitulo`, `imagen`, `descripcion`, `cliente`, `categoria`, `url`) VALUES (NULL,:titulo,:subtitulo,:imagen,:descripcion,:cliente,:categoria,:url);");
 
     $sentencia->bindParam(":titulo",$titulo);
